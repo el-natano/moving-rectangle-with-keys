@@ -21,16 +21,34 @@ def handle_events():
                 return False
     return True
 
+def draw_rectangle(screen, rect, color, thickness):
+    """Draws a rectangle on the Pygame window."""
+    pygame.draw.rect(screen, color, rect, thickness)
+
+
 def main():
 
     screen = init_game()
     clock = pygame.time.Clock() 
+
+    my_rect1 = [150, 250, 200, 150]
+    thickness1 = 8 # Line thickness (width) in pixels
+
+
+
     
 
     running = True
     while running:
         running = handle_events()
         screen.fill(config.WHITE)  
+
+        draw_rectangle(screen, my_rect1, config.RED, thickness)
+
+
+
+
+        
         
     
         pygame.display.flip()
